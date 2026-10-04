@@ -26,7 +26,7 @@ export default function Skills() {
         transition:"all .6s cubic-bezier(0.22,1,0.36,1)",
         marginBottom:60,
       }}>
-        <div className="section-label" style={{marginBottom:14}}>// skills</div>
+        <div className="section-label" style={{marginBottom:14}}>{"// skills"}</div>
         <h2 style={{fontFamily:"var(--fd)",fontSize:"clamp(28px,4vw,52px)",fontWeight:800,
           letterSpacing:"-.03em",color:"var(--txt)",marginBottom:12}}>
           Technical Ecosystem
