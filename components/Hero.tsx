@@ -156,8 +156,7 @@ export default function Hero() {
           opacity: ready ? 1 : 0, transform: ready ? "translateY(0)" : "translateY(16px)",
           transition: tr(0.28),
         }}>
-          Designing production-grade backend architectures, intelligent NLP systems,
-          and high-performance platforms — with scalability, reliability, and engineering depth.
+          Designing backend APIs, NLP pipelines, and platform systems with a focus on reliability, observability, and clear architectural tradeoffs.
         </p>
 
         {/* CTAs */}
