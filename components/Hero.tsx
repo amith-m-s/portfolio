@@ -48,8 +48,11 @@ export default function Hero() {
         const t = setTimeout(() => setTyped(typed.slice(0, -1)), 30);
         return () => clearTimeout(t);
       } else {
-        setRoleIdx((i) => (i + 1) % ROLES.length);
-        setPhase("typing");
+        const t = setTimeout(() => {
+          setRoleIdx((i) => (i + 1) % ROLES.length);
+          setPhase("typing");
+        }, 0);
+        return () => clearTimeout(t);
       }
     }
   }, [typed, phase, roleIdx]);
