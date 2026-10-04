@@ -4,11 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio-beryl-five-zezv4gffmv.vercel.app"),
   title: { default: "Amith M S — Backend Engineer & AI Systems", template: "%s · Amith M S" },
-  description: "Backend engineer building APIs, NLP systems, cloud reference architectures, and reliability-focused software."
+  description: "Backend engineer building APIs, NLP systems, cloud reference architectures, and reliability-focused software.",
   keywords: ["backend engineer","AI systems","NLP","FastAPI","Node.js","Docker","Sui Move","React","PostgreSQL","software engineer Kerala"],
   authors: [{ name: "Amith M S", url: "https://github.com/amith-m-s" }],
   openGraph: {
-    type: "website", url: "https://amithms.dev",
+    type: "website", url: "https://portfolio-beryl-five-zezv4gffmv.vercel.app/",
     title: "Amith M S — Backend Engineer & AI Systems",
     description: "Backend engineering, AI/NLP systems, cloud architecture, and reliability-focused projects.",
     siteName: "Amith M S",
