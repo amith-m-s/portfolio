@@ -30,7 +30,6 @@ export default function CommandPalette() {
   }, []);
 
   useEffect(() => { if (open) setTimeout(() => inputRef.current?.focus(), 50); }, [open]);
-  useEffect(() => { setIdx(0); }, [query]);
 
   const run = (cmd: typeof COMMANDS[0]) => { cmd.action(); setOpen(false); setQuery(""); };
 
@@ -94,7 +93,7 @@ export default function CommandPalette() {
           <input
             ref={inputRef}
             value={query}
-            onChange={e => setQuery(e.target.value)}
+            onChange={e => { setQuery(e.target.value); setIdx(0); }}
             onKeyDown={onKeyDown}
             placeholder="Type a command or search..."
             style={{
