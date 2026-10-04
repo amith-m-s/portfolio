@@ -28,12 +28,12 @@ export default function Footer() {
         <div className="footer-grid" style={{position:"relative",display:"grid",gridTemplateColumns:"1fr 1fr",gap:56}}>
           {/* Left */}
           <div>
-            <div className="section-label" style={{marginBottom:16}}>// contact</div>
+            <div className="section-label" style={{marginBottom:16}}>{"// contact"}</div>
             <h2 style={{
               fontFamily:"var(--fd)",fontSize:"clamp(22px,3vw,38px)",fontWeight:800,
               letterSpacing:"-.03em",color:"var(--txt)",marginBottom:14,lineHeight:1.08,
             }}>
-              Let's build something<br/>
+              Let&apos;s build something<br/>
               <span className="fs" style={{fontStyle:"italic",fontWeight:300,color:"var(--txt2)"}}>serious.</span>
             </h2>
             <p style={{fontSize:14.5,color:"var(--txt2)",lineHeight:1.72,maxWidth:360,marginBottom:28}}>
