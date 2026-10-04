@@ -4,13 +4,13 @@ import { useInView } from "./useInView";
 
 const CLUSTERS = [
   { cat:"Backend Systems", color:"#5b9cf6", skills:["FastAPI","Node.js","Express.js","REST APIs","JWT Auth","Async Processing","Rate Limiting","Celery"] },
-  { cat:"AI / NLP", color:"#a371f7", skills:["Sentence Embeddings","Cosine Similarity","NLP Pipelines","Skill Extraction","Role Prediction","RAG","LLM Integration"] },
+  { cat:"AI / NLP", color:"#a371f7", skills:["Sentence Embeddings","Cosine Similarity","NLP Pipelines","Skill Extraction","Role Prediction","LLM/RAG Integration"] },
   { cat:"Infrastructure", color:"#39d353", skills:["Docker","Docker Compose","Linux","GitHub Actions","Terraform","AWS Architecture","Vercel"] },
   { cat:"Languages", color:"#e3a743", skills:["Python","JavaScript (ES6+)","TypeScript","C#","C","C++","SQL","Sui Move"] },
-  { cat:"Databases", color:"#f0883e", skills:["PostgreSQL","MySQL","SQLite","Schema Design","Indexing","Query Optimization","Migrations"] },
+  { cat:"Databases", color:"#f0883e", skills:["PostgreSQL","MySQL","SQLite","Schema Design","Indexing","Migrations"] },
   { cat:"Blockchain", color:"#5b9cf6", skills:["Sui Move","Smart Contracts","On-chain Randomness","NFT Lifecycle","Capability Objects","Events"] },
   { cat:"Frontend", color:"#79c0ff", skills:["React.js","Next.js","Tailwind CSS","Chart.js","HTML5","CSS3","Responsive Design"] },
-  { cat:"CS Fundamentals", color:"#7d8694", skills:["Data Structures","Algorithms","OOP","DBMS","Operating Systems","Computer Networks","System Design"] },
+  { cat:"CS Fundamentals", color:"#7d8694", skills:["Data Structures","Algorithms","OOP","DBMS","Operating Systems","Computer Networks"] },
 ];
 
 export default function Skills() {
