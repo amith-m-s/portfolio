@@ -1,6 +1,6 @@
 # Amith M S — Portfolio
 
-Elite backend engineering portfolio built with Next.js 15, TypeScript, and TailwindCSS.
+Backend engineering portfolio built with Next.js, TypeScript, and TailwindCSS.
 
 ## Stack
 - **Next.js 15** App Router
@@ -22,3 +22,8 @@ npm run dev
 - **Skills** — Ecosystem clusters by capability
 - **Philosophy** — Engineering principles
 - **Contact** — Footer with all links
+
+
+## Content policy
+
+Project status labels intentionally distinguish live demos, reference implementations, hackathon platforms, simulations, and testnet contracts. Architecture diagrams describe the current implementation, not planned future architecture.
