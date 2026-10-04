@@ -12,7 +12,7 @@ type Layer = {
 
 const LAYERS: Layer[] = [
   { id:"client", label:"Client Layer", color:"#5b9cf6", nodes:["React Frontend","PDF Upload","Results UI"], desc:"The client provides resume and job-description input, displays the match result, and links to the live demo." },
-  { id:"gateway", label:"API Gateway", color:"#a371f7", nodes:["Express.js","PDF Parsing","Rate Limiting"], desc:"The Node gateway extracts PDF text, applies rule-based skill matching and handles the HTTP boundary." },
+  { id:"gateway", label:"API Gateway", color:"#a371f7", nodes:["Express.js","PDF Parsing","Request Validation"], desc:"The Node gateway extracts PDF text, applies rule-based skill matching and handles the HTTP boundary." },
   { id:"worker", label:"NLP Worker", color:"#39d353", nodes:["Python Worker","MiniLM","Cosine Similarity"], desc:"The Python process loads SentenceTransformer, computes semantic similarity, ranks matched lines, and predicts roles." },
   { id:"scoring", label:"Scoring Layer", color:"#e3a743", nodes:["Semantic Score","Keyword Score","Domain Rules"], desc:"Semantic similarity is combined with exact skill evidence and deterministic role/skill rules to produce the final match output." },
   { id:"infra", label:"Infrastructure", color:"#f0883e", nodes:["Docker","Node + Python","Vercel Demo"], desc:"The repository currently packages the Node gateway and Python inference worker in the backend image; the React client remains a separate application." },
