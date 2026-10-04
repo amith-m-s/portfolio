@@ -3,10 +3,8 @@ import { useState, useEffect, useRef } from "react";
 
 const ROLES = [
   "Backend Engineer",
-  "AI Systems Builder",
   "Platform Engineer",
-  "NLP Engineer",
-  "Smart Contract Developer",
+  "AI Systems Engineer",
 ];
 
 const METRICS = [
