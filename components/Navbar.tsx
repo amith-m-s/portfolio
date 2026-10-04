@@ -10,7 +10,7 @@ const NAV = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(0);\n  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
@@ -58,7 +58,7 @@ export default function Navbar() {
         </a>
 
         {/* Nav links */}
-        <div style={{display:"flex",alignItems:"center",gap:2}}>
+        <div className="desktop-nav" style={{display:"flex",alignItems:"center",gap:2}}>
           {NAV.map(n => (
             <a key={n.label} href={n.href} style={{
               padding:"6px 14px",
