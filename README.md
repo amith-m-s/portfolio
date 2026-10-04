@@ -3,7 +3,7 @@
 Backend engineering portfolio built with Next.js, TypeScript, and TailwindCSS.
 
 ## Stack
-- **Next.js 15** App Router
+- **Next.js 16** App Router
 - **TypeScript**
 - **Tailwind CSS v4**
 - **Google Fonts** (Syne, JetBrains Mono, Instrument Serif)
@@ -18,7 +18,7 @@ npm run dev
 ## Sections
 - **Hero** — Animated headline with cursor-reactive lighting
 - **About** — Engineering philosophy, timeline, certifications
-- **Projects** — Deep Resume Analyzer, LootBox Game, JARVIS, Pro Finance Tracker
+- **Projects** — RelayForge, Rekshakan, Deep Resume Analyzer, Cloud God Platform, EngineerOS, LootBox Game
 - **Skills** — Ecosystem clusters by capability
 - **Philosophy** — Engineering principles
 - **Contact** — Footer with all links
