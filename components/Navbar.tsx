@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const NAV = [
@@ -40,7 +41,7 @@ export default function Navbar() {
         borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "none",
         transition: "all .35s cubic-bezier(0.22,1,0.36,1)",
       }}>
-        <a href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 11 }}>
+        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 11 }}>
           <div style={{
             width: 32, height: 32, borderRadius: 8,
             background: "linear-gradient(135deg,var(--acc) 0%,var(--accv) 100%)",
@@ -51,7 +52,7 @@ export default function Navbar() {
             <div style={{ fontFamily: "var(--fm)", fontSize: 12.5, color: "var(--txt)", letterSpacing: ".04em", lineHeight: 1 }}>amith_ms</div>
             <div style={{ fontFamily: "var(--fm)", fontSize: 9.5, color: "var(--txt3)", letterSpacing: ".06em", lineHeight: 1, marginTop: 2 }}>backend · ai · systems</div>
           </div>
-        </a>
+        </Link>
 
         <div className="desktop-nav" style={{ display: "flex", alignItems: "center", gap: 2 }}>
           {NAV.map((n) => (
