@@ -37,7 +37,7 @@ export default function About() {
     <section id="about" ref={ref as React.RefObject<HTMLElement>}
       style={{padding:"128px 40px",maxWidth:1100,margin:"0 auto"}}>
       <div style={s(0)}>
-        <div className="section-label" style={{marginBottom:14}}>// about</div>
+        <div className="section-label" style={{marginBottom:14}}>{"// about"}</div>
         <h2 style={{fontFamily:"var(--fd)",fontSize:"clamp(28px,4vw,52px)",fontWeight:800,
           letterSpacing:"-.03em",color:"var(--txt)",lineHeight:1.04,marginBottom:56}}>
           Engineer who thinks in{" "}
