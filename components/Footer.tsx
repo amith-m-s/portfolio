@@ -25,7 +25,7 @@ export default function Footer() {
           pointerEvents:"none",
         }}/>
 
-        <div style={{position:"relative",display:"grid",gridTemplateColumns:"1fr 1fr",gap:56}}>
+        <div className="footer-grid" style={{position:"relative",display:"grid",gridTemplateColumns:"1fr 1fr",gap:56}}>
           {/* Left */}
           <div>
             <div className="section-label" style={{marginBottom:16}}>// contact</div>
