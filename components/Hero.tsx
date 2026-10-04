@@ -8,7 +8,7 @@ const ROLES = [
 ];
 
 const METRICS = [
-  { v:"6", l:"Flagship systems" },
+  { v:"4", l:"Core systems" },
   { v:"Async", l:"Queues & workers" },
   { v:"NLP", l:"Semantic matching" },
   { v:"Sui", l:"On-chain contracts" },
