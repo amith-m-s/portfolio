@@ -234,7 +234,7 @@ function Card({ p, idx, visible }: { p: typeof P[number]; idx: number; visible: 
             </div>
           ))}
           <div>
-            <div style={{ fontFamily: "var(--fm)", fontSize: 10, color: p.color, marginBottom: 12, letterSpacing: ".08em" }}>// engineering_decisions</div>
+            <div style={{ fontFamily: "var(--fm)", fontSize: 10, color: p.color, marginBottom: 12, letterSpacing: ".08em" }}>{"// engineering_decisions"}</div>
             <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
               {p.decisions.map((d, i) => (
                 <div key={i} style={{ display: "flex", gap: 12, padding: "10px 14px", background: p.color + "07", border: "1px solid " + p.color + "18", borderRadius: 8 }}>
@@ -255,7 +255,7 @@ export default function Projects() {
   return (
     <section id="projects" ref={ref as React.RefObject<HTMLElement>} style={{ padding: "128px 40px", maxWidth: 1100, margin: "0 auto" }}>
       <div style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(24px)", transition: "all .6s cubic-bezier(0.22,1,0.36,1)", marginBottom: 60 }}>
-        <div className="section-label" style={{ marginBottom: 14 }}>// projects</div>
+        <div className="section-label" style={{ marginBottom: 14 }}>{"// projects"}</div>
         <h2 style={{ fontFamily: "var(--fd)", fontSize: "clamp(28px,4vw,52px)", fontWeight: 800, letterSpacing: "-.03em", color: "var(--txt)", marginBottom: 12 }}>Systems I can explain end-to-end.</h2>
         <p style={{ fontSize: 15.5, color: "var(--txt2)", maxWidth: 560 }}>
           Each project is labeled by what it actually is: a live demo, a reference implementation, a hackathon platform, or a simulation. The deep-dive sections focus on architecture, tradeoffs, and known limits.
