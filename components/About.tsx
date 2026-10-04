@@ -3,7 +3,7 @@ import { useInView } from "./useInView";
 
 const PRINCIPLES = [
   { n:"01", t:"Design for failure",  d:"Fault tolerance, retries, and graceful degradation are first-class requirements — not post-incident patches." },
-  { n:"02", t:"Observability first", d:"Structured logs, distributed traces, and meaningful alerts before the first release." },
+  { n:"02", t:"Observability first", d:"Request IDs, structured logs, useful metrics, and actionable alerts before the first release." },
   { n:"03", t:"Contracts before code",d:"API schema, database migrations, and message formats defined before implementation. Changes in flight break things." },
   { n:"04", t:"Scale by design",     d:"I think N×10 before optimizing prematurely. Horizontal scaling, queue decoupling, and caching layers shaped at the architecture stage." },
 ];
@@ -18,7 +18,6 @@ const TIMELINE = [
 ];
 
 const CERTS = [
-  { l:"CGPA", v:"7.78 / 10.0" },
   { l:"Microsoft C# (.NET)", v:"91.3%" },
   { l:"HackerRank SE", v:"Certified" },
   { l:"NPTEL DBMS", v:"Certified" },
