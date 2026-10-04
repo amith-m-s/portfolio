@@ -9,20 +9,20 @@ const PRINCIPLES = [
 ];
 
 const TIMELINE = [
-  { y:"2027", t:"B.Tech CSBS",                 o:"Rajagiri School of Engineering",   dot:"acc",  current:true },
-  { y:"2025", t:"Deep Resume Analyzer",         o:"Production — Vercel Deployed",      dot:"acc2", current:false },
-  { y:"2025", t:"Python Intern",                o:"Futura Labs, Calicut",              dot:"accw", current:false },
-  { y:"2024", t:"JARVIS + LootBox Game",        o:"NLP & Blockchain Systems",          dot:"accv", current:false },
-  { y:"2024", t:"Pro Finance Tracker",          o:"Open Source",                       dot:"acc",  current:false },
-  { y:"2023", t:"Computer Science journey",     o:"Kerala, India",                     dot:"txt3", current:false },
+  { y:"2027", t:"B.Tech CSBS", o:"Rajagiri School of Engineering", dot:"acc", current:true },
+  { y:"2026", t:"Rekshakan", o:"Hackathon disaster-response platform", dot:"accv", current:false },
+  { y:"2026", t:"RelayForge + Cloud God", o:"Backend and cloud reference systems", dot:"acc2", current:false },
+  { y:"2026", t:"Deep Resume Analyzer + LootBox", o:"AI/NLP + Sui Move systems", dot:"accw", current:false },
+  { y:"2025", t:"Python Intern", o:"Futura Labs, Calicut", dot:"accv", current:false },
+  { y:"2023", t:"Computer Science journey", o:"Kerala, India", dot:"txt3", current:false },
 ];
 
 const CERTS = [
-  { l:"CGPA",              v:"7.90 / 10.0" },
-  { l:"Microsoft C# (.NET)",v:"91.3%" },
-  { l:"HackerRank SE",    v:"Certified" },
+  { l:"CGPA", v:"7.78 / 10.0" },
+  { l:"Microsoft C# (.NET)", v:"91.3%" },
+  { l:"HackerRank SE", v:"Certified" },
+  { l:"NPTEL DBMS", v:"Certified" },
   { l:"Fortinet Cybersec", v:"Certified" },
-  { l:"AWS ML Path",      v:"In Progress" },
 ];
 
 export default function About() {
@@ -50,10 +50,11 @@ export default function About() {
         <div>
           <div style={s(0.08)}>
             <p style={{fontSize:15.5,color:"var(--txt2)",lineHeight:1.82,marginBottom:20}}>
-              I build systems that are meant to <em style={{color:"var(--txt)",fontStyle:"normal",fontWeight:500}}>survive production</em> — not just pass code review. My work spans backend API design, NLP-powered data pipelines, and blockchain smart contract architecture, with a consistent focus on performance, reliability, and architectural clarity.
+              <p style={{fontSize:15.5,color:"var(--txt2)",lineHeight:1.82,marginBottom:20}}>
+              I build backend systems with an emphasis on clear contracts, failure handling, observability, and data flow. My work spans APIs, NLP pipelines, cloud infrastructure, geospatial applications, and smart contracts.
             </p>
             <p style={{fontSize:15.5,color:"var(--txt2)",lineHeight:1.82,marginBottom:40}}>
-              Currently a final-year B.Tech student at Rajagiri, I've shipped real production systems — from a Docker-orchestrated semantic resume platform on Vercel to on-chain NFT loot box engines written in Sui Move. I treat observability as a requirement and think about tradeoffs before technology.
+              Currently a final-year B.Tech student at Rajagiri, I focus on turning system-design ideas into working, testable implementations while being explicit about what is deployed, simulated, or still a reference stage.
             </p>
           </div>
 
