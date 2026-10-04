@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
+import { Fraunces, JetBrains_Mono, Syne } from "next/font/google";
 import "./globals.css";
+
+const syne = Syne({ subsets: ["latin"], variable: "--font-syne", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
+const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio-beryl-five-zezv4gffmv.vercel.app"),
