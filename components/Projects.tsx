@@ -229,7 +229,7 @@ function Card({ p, idx, visible }: { p: typeof P[number]; idx: number; visible: 
             { k: "future_roadmap", t: "Future Roadmap", c: p.future },
           ].map((sec) => (
             <div key={sec.k} style={{ marginBottom: 24 }}>
-              <div style={{ fontFamily: "var(--fm)", fontSize: 10, color: p.color, marginBottom: 8, letterSpacing: ".08em" }}>// {sec.k}</div>
+              <div style={{ fontFamily: "var(--fm)", fontSize: 10, color: p.color, marginBottom: 8, letterSpacing: ".08em" }}>{"// " + sec.k}</div>
               <p style={{ fontSize: 13.5, color: "var(--txt2)", lineHeight: 1.78 }}>{sec.c}</p>
             </div>
           ))}
