@@ -11,11 +11,11 @@ type Layer = {
 };
 
 const LAYERS: Layer[] = [
-  { id:"client",  label:"Client Layer",        color:"#5b9cf6", nodes:["React Frontend","Browser Cache","CDN Edge"],           desc:"Static assets served from Vercel edge network. Client-side routing via React." },
-  { id:"gateway", label:"API Gateway",         color:"#a371f7", nodes:["Express.js Gateway","JWT Auth","Rate Limiter"],         desc:"All requests hit the Express gateway. Auth validated via JWT. Rate limiting at this layer." },
-  { id:"service", label:"NLP Microservice",    color:"#39d353", nodes:["FastAPI Server","PDF Parser","Embedding Engine"],       desc:"Isolated Python service. Handles all NLP operations: PDF text extraction, embedding generation, cosine similarity scoring." },
-  { id:"data",    label:"Data & Cache Layer",  color:"#e3a743", nodes:["SQLite / DB","Response Cache","Vector Store"],          desc:"Persistence for results and session data. Response caching prevents redundant embedding calls for identical inputs." },
-  { id:"infra",   label:"Infrastructure",      color:"#f0883e", nodes:["Docker Compose","Container Orchestration","Vercel CI"], desc:"Docker Compose coordinates all services locally and in production. Vercel handles frontend CI/CD with automatic deploys." },
+  { id:"client", label:"Client Layer", color:"#5b9cf6", nodes:["React Frontend","PDF Upload","Results UI"], desc:"The client provides resume and job-description input, displays the match result, and links to the live demo." },
+  { id:"gateway", label:"API Gateway", color:"#a371f7", nodes:["Express.js","PDF Parsing","Rate Limiting"], desc:"The Node gateway extracts PDF text, applies rule-based skill matching and handles the HTTP boundary." },
+  { id:"worker", label:"NLP Worker", color:"#39d353", nodes:["Python Worker","MiniLM","Cosine Similarity"], desc:"The Python process loads SentenceTransformer, computes semantic similarity, ranks matched lines, and predicts roles." },
+  { id:"scoring", label:"Scoring Layer", color:"#e3a743", nodes:["Semantic Score","Keyword Score","Domain Rules"], desc:"Semantic similarity is combined with exact skill evidence and deterministic role/skill rules to produce the final match output." },
+  { id:"infra", label:"Infrastructure", color:"#f0883e", nodes:["Docker","Node + Python","Vercel Demo"], desc:"The repository currently packages the Node gateway and Python inference worker in the backend image; the React client remains a separate application." },
 ];
 
 export default function ArchDiagram() {
@@ -35,10 +35,10 @@ export default function ArchDiagram() {
         <div className="section-label" style={{marginBottom:14}}>// architecture</div>
         <h2 style={{fontFamily:"var(--fd)",fontSize:"clamp(24px,3.5vw,44px)",fontWeight:800,
           letterSpacing:"-.03em",color:"var(--txt)",marginBottom:10}}>
-          Deep Resume Analyzer — System Architecture
+          Deep Resume Analyzer — Current System Architecture
         </h2>
         <p style={{fontSize:14.5,color:"var(--txt2)",maxWidth:480}}>
-          Click any layer to inspect its responsibilities. Each service is an isolated Docker container.
+          Click any layer to inspect its responsibilities. The diagram mirrors the current repository implementation rather than a future microservice plan.
         </p>
       </div>
 
@@ -138,7 +138,7 @@ export default function ArchDiagram() {
                     }}/>
                   </div>
                   <span style={{fontFamily:"var(--fm)",fontSize:9,color:"var(--txt3)",marginLeft:10,letterSpacing:".05em"}}>
-                    {i===0?"HTTP/REST":i===1?"gRPC / REST":i===2?"SQL / Cache read":"Deploy"}
+                    {i===0?"HTTP":i===1?"local process":i===2?"score composition":"build / deploy"}
                   </span>
                 </div>
               )}
