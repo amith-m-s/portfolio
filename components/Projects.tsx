@@ -74,7 +74,7 @@ const P = [
     ],
     color: "var(--acc2)",
     problem: "Keyword-only resume matching can miss semantic similarity, while semantic similarity alone can over-credit broadly related text. The project combines both signals with deterministic skill rules.",
-    arch: "React client -> Express gateway -> Python inference worker. The gateway handles PDF extraction, rule-based skill matching and request controls; the Python worker loads SentenceTransformer, computes cosine similarity, ranks matched lines, and predicts likely roles.",
+    arch: "React client -> Express gateway -> Python inference worker. The gateway handles PDF extraction, rule-based skill matching and request validation; the Python worker loads SentenceTransformer, computes cosine similarity, ranks matched lines, and predicts likely roles.",
     decisions: [
       "MiniLM embeddings provide a lightweight semantic representation suitable for a student-scale demo.",
       "A weighted hybrid score keeps exact keyword evidence visible instead of hiding everything behind embeddings.",
