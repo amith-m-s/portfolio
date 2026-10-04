@@ -4,16 +4,16 @@ import { useState, useEffect, useRef } from "react";
 const ROLES = [
   "Backend Engineer",
   "AI Systems Builder",
-  "Infrastructure Architect",
+  "Platform Engineer",
   "NLP Engineer",
-  "Blockchain Developer",
+  "Smart Contract Developer",
 ];
 
 const METRICS = [
-  { v: "3-service", l: "Containerised stack" },
-  { v: "< 3s", l: "Resume processing" },
-  { v: "On-chain", l: "Verifiable randomness" },
-  { v: "Fullstack", l: "End-to-end delivery" },
+  { v:"6", l:"Flagship systems" },
+  { v:"Async", l:"Queues & workers" },
+  { v:"NLP", l:"Semantic matching" },
+  { v:"Sui", l:"On-chain contracts" },
 ];
 
 const STACK = ["Python","Node.js","FastAPI","Docker","React","NLP","Sui Move","PostgreSQL"];
@@ -113,7 +113,7 @@ export default function Hero() {
             animation:"pulse 2s ease-in-out infinite",
           }}/>
           <span style={{fontFamily:"var(--fm)",fontSize:10.5,color:"var(--acc2)",letterSpacing:".08em"}}>
-            Open to opportunities · Kerala, India
+            Open to backend / software engineering opportunities · Kerala, India
           </span>
         </div>
 
