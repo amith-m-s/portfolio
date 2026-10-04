@@ -42,7 +42,7 @@ export default function ArchDiagram() {
         </p>
       </div>
 
-      <div style={{
+      <div className="arch-grid" style={{
         display:"grid",gridTemplateColumns:"1fr 320px",gap:24,
         opacity: visible ? 1 : 0,
         transition:"opacity .8s cubic-bezier(0.22,1,0.36,1) .15s",
@@ -147,7 +147,7 @@ export default function ArchDiagram() {
         </div>
 
         {/* Detail panel */}
-        <div style={{
+        <div className="arch-detail" style={{
           border:"1px solid var(--bdr)",borderRadius:16,
           background:"var(--sur)",overflow:"hidden",
           position:"sticky",top:80,alignSelf:"start",
