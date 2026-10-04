@@ -3,14 +3,14 @@ import { useState } from "react";
 import { useInView } from "./useInView";
 
 const CLUSTERS = [
-  { cat:"Backend Systems",     color:"#5b9cf6", skills:["Node.js","Express.js","FastAPI","REST APIs","JWT Auth","Async Processing","File Handling","Rate Limiting"] },
-  { cat:"AI / NLP",            color:"#a371f7", skills:["Semantic Embeddings","NLP Pipelines","Resume Parsing","Ranking Systems","Vector Search","LLM Integration","Intent Classification"] },
-  { cat:"Infrastructure",      color:"#39d353", skills:["Docker","Docker Compose","Linux","CI/CD","GitHub Actions","Vercel","Environment Parity"] },
-  { cat:"Languages",           color:"#e3a743", skills:["Python","JavaScript (ES6+)","TypeScript","C#","C","C++","SQL","R"] },
-  { cat:"Databases",           color:"#f0883e", skills:["MySQL","SQLite","Data Modeling","Query Optimization","Schema Design","Indexing","LocalStorage"] },
-  { cat:"Blockchain",          color:"#5b9cf6", skills:["Sui Move","Smart Contracts","On-chain Randomness","NFT Lifecycle","Object Model","Event Logging"] },
-  { cat:"Frontend",            color:"#79c0ff", skills:["React.js","Next.js","Tailwind CSS","Chart.js","HTML5","CSS3","Responsive Design"] },
-  { cat:"CS Fundamentals",     color:"#7d8694", skills:["Data Structures","Algorithms","OOP","DBMS","OS Concepts","Computer Networks","System Design"] },
+  { cat:"Backend Systems", color:"#5b9cf6", skills:["FastAPI","Node.js","Express.js","REST APIs","JWT Auth","Async Processing","Rate Limiting","Celery"] },
+  { cat:"AI / NLP", color:"#a371f7", skills:["Sentence Embeddings","Cosine Similarity","NLP Pipelines","Skill Extraction","Role Prediction","RAG","LLM Integration"] },
+  { cat:"Infrastructure", color:"#39d353", skills:["Docker","Docker Compose","Linux","GitHub Actions","Terraform","AWS Architecture","Vercel"] },
+  { cat:"Languages", color:"#e3a743", skills:["Python","JavaScript (ES6+)","TypeScript","C#","C","C++","SQL","Sui Move"] },
+  { cat:"Databases", color:"#f0883e", skills:["PostgreSQL","MySQL","SQLite","Schema Design","Indexing","Query Optimization","Migrations"] },
+  { cat:"Blockchain", color:"#5b9cf6", skills:["Sui Move","Smart Contracts","On-chain Randomness","NFT Lifecycle","Capability Objects","Events"] },
+  { cat:"Frontend", color:"#79c0ff", skills:["React.js","Next.js","Tailwind CSS","Chart.js","HTML5","CSS3","Responsive Design"] },
+  { cat:"CS Fundamentals", color:"#7d8694", skills:["Data Structures","Algorithms","OOP","DBMS","Operating Systems","Computer Networks","System Design"] },
 ];
 
 export default function Skills() {
@@ -32,7 +32,7 @@ export default function Skills() {
           Technical Ecosystem
         </h2>
         <p style={{fontSize:15.5,color:"var(--txt2)",maxWidth:480}}>
-          Organised by capability cluster. Hover to illuminate.
+          Organised by capability cluster. Focused on tools and concepts represented in the public projects and resume.
         </p>
       </div>
 
