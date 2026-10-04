@@ -32,7 +32,7 @@ export default function ArchDiagram() {
         transition:"all .6s cubic-bezier(0.22,1,0.36,1)",
         marginBottom:48,
       }}>
-        <div className="section-label" style={{marginBottom:14}}>// architecture</div>
+        <div className="section-label" style={{marginBottom:14}}>{"// architecture"}</div>
         <h2 style={{fontFamily:"var(--fd)",fontSize:"clamp(24px,3.5vw,44px)",fontWeight:800,
           letterSpacing:"-.03em",color:"var(--txt)",marginBottom:10}}>
           Deep Resume Analyzer — Current System Architecture
@@ -167,9 +167,7 @@ export default function ArchDiagram() {
               <p style={{fontSize:13.5,color:"var(--txt2)",lineHeight:1.78,marginBottom:20}}>
                 {activeLayer.desc}
               </p>
-              <div style={{fontFamily:"var(--fm)",fontSize:10,color:"var(--txt3)",marginBottom:10,letterSpacing:".08em"}}>
-                // services
-              </div>
+              <div style={{fontFamily:"var(--fm)",fontSize:10,color:"var(--txt3)",marginBottom:10,letterSpacing:".08em"}}>{"// services"}</div>
               <div style={{display:"flex",flexDirection:"column",gap:6}}>
                 {activeLayer.nodes.map(n => (
                   <div key={n} style={{
