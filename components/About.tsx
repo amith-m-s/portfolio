@@ -3,7 +3,7 @@ import { useInView } from "./useInView";
 
 const PRINCIPLES = [
   { n:"01", t:"Design for failure",  d:"Fault tolerance, retries, and graceful degradation are first-class requirements — not post-incident patches." },
-  { n:"02", t:"Observability first", d:"Structured logs, distributed traces, and meaningful alerts before the first production deployment." },
+  { n:"02", t:"Observability first", d:"Structured logs, distributed traces, and meaningful alerts before the first release." },
   { n:"03", t:"Contracts before code",d:"API schema, database migrations, and message formats defined before implementation. Changes in flight break things." },
   { n:"04", t:"Scale by design",     d:"I think N×10 before optimizing prematurely. Horizontal scaling, queue decoupling, and caching layers shaped at the architecture stage." },
 ];
@@ -45,12 +45,11 @@ export default function About() {
         </h2>
       </div>
 
-      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:72}}>
+      <div className="about-grid" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:72}}>
         {/* Left */}
         <div>
           <div style={s(0.08)}>
             <p style={{fontSize:15.5,color:"var(--txt2)",lineHeight:1.82,marginBottom:20}}>
-              <p style={{fontSize:15.5,color:"var(--txt2)",lineHeight:1.82,marginBottom:20}}>
               I build backend systems with an emphasis on clear contracts, failure handling, observability, and data flow. My work spans APIs, NLP pipelines, cloud infrastructure, geospatial applications, and smart contracts.
             </p>
             <p style={{fontSize:15.5,color:"var(--txt2)",lineHeight:1.82,marginBottom:40}}>
