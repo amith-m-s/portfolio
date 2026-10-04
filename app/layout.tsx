@@ -2,21 +2,21 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://amithms.dev"),
+  metadataBase: new URL("https://portfolio-beryl-five-zezv4gffmv.vercel.app"),
   title: { default: "Amith M S — Backend Engineer & AI Systems", template: "%s · Amith M S" },
-  description: "Backend-focused engineer building AI-powered platforms, scalable infrastructure, and production systems. Specializing in NLP pipelines, distributed architecture, and blockchain.",
+  description: "Backend engineer building APIs, NLP systems, cloud reference architectures, and reliability-focused software."
   keywords: ["backend engineer","AI systems","NLP","FastAPI","Node.js","Docker","Sui Move","React","PostgreSQL","software engineer Kerala"],
   authors: [{ name: "Amith M S", url: "https://github.com/amith-m-s" }],
   openGraph: {
     type: "website", url: "https://amithms.dev",
     title: "Amith M S — Backend Engineer & AI Systems",
-    description: "Building production-grade backend architectures, intelligent systems, and high-performance platforms.",
+    description: "Backend engineering, AI/NLP systems, cloud architecture, and reliability-focused projects.",
     siteName: "Amith M S",
   },
   twitter: {
     card: "summary_large_image",
     title: "Amith M S — Backend Engineer",
-    description: "Backend + AI infrastructure engineer. Systems that survive production.",
+    description: "Backend engineering, AI/NLP systems, cloud architecture, and reliability.",
   },
   robots: { index: true, follow: true },
   icons: { icon: "/favicon.ico" },
