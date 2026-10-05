@@ -5,6 +5,7 @@
 [![Last Commit](https://img.shields.io/github/last-commit/amith-m-s/portfolio)](https://github.com/amith-m-s/portfolio/commits/main)
 [![Issues](https://img.shields.io/github/issues/amith-m-s/portfolio)](https://github.com/amith-m-s/portfolio/issues)
 [![Stars](https://img.shields.io/github/stars/amith-m-s/portfolio)](https://github.com/amith-m-s/portfolio/stargazers)
+[![CodeQL](https://github.com/amith-m-s/portfolio/actions/workflows/codeql.yml/badge.svg)](https://github.com/amith-m-s/portfolio/actions/workflows/codeql.yml)
 
 # Amith M S — Portfolio
 
