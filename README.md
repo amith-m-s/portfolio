@@ -1,3 +1,11 @@
+[![CI](https://github.com/amith-m-s/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/amith-m-s/portfolio/actions/workflows/ci.yml)
+[![Top Language](https://img.shields.io/github/languages/top/amith-m-s/portfolio)](https://github.com/amith-m-s/portfolio)
+[![Code Size](https://img.shields.io/github/languages/code-size/amith-m-s/portfolio)](https://github.com/amith-m-s/portfolio)
+[![Repo Size](https://img.shields.io/github/repo-size/amith-m-s/portfolio)](https://github.com/amith-m-s/portfolio)
+[![Last Commit](https://img.shields.io/github/last-commit/amith-m-s/portfolio)](https://github.com/amith-m-s/portfolio/commits/main)
+[![Issues](https://img.shields.io/github/issues/amith-m-s/portfolio)](https://github.com/amith-m-s/portfolio/issues)
+[![Stars](https://img.shields.io/github/stars/amith-m-s/portfolio)](https://github.com/amith-m-s/portfolio/stargazers)
+
 # Amith M S — Portfolio
 
 Backend engineering portfolio built with Next.js, TypeScript, and TailwindCSS.
