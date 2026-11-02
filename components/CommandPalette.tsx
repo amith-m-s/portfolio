@@ -2,7 +2,7 @@
 
 import * as Dialog from "@radix-ui/react-dialog";
 import { useEffect, useRef, useState } from "react";
-import type { KeyboardEvent } from "react";
+import type { CSSProperties, KeyboardEvent } from "react";
 
 const COMMANDS = [
   { label: "View Projects", action: () => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" }), key: "P" },
@@ -16,7 +16,7 @@ const COMMANDS = [
 ];
 
 const LIST_ID = "command-palette-results";
-const visuallyHidden: React.CSSProperties = {
+const visuallyHidden: CSSProperties = {
   position: "absolute",
   width: 1,
   height: 1,
