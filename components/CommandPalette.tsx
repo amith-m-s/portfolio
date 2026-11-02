@@ -220,67 +220,66 @@ export default function CommandPalette() {
             aria-label="Available commands"
             style={{ maxHeight: 320, overflowY: "auto", padding: "6px 0" }}
           >
-            {filtered.length === 0 ? (
+            {filtered.map((command, index) => (
               <div
-                role="status"
+                key={command.label}
+                id={getOptionId(command.key)}
+                role="option"
+                aria-selected={index === idx}
+                onClick={() => run(command)}
+                onMouseMove={() => setIdx(index)}
                 style={{
-                  padding: 20,
-                  fontFamily: "var(--fm)",
-                  fontSize: 12,
-                  color: "var(--txt3)",
-                  textAlign: "center",
+                  width: "100%",
+                  padding: "10px 18px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  background: index === idx ? "rgba(91,156,246,0.1)" : "transparent",
+                  cursor: "pointer",
+                  textAlign: "left",
+                  transition: "background .12s",
                 }}
               >
-                No commands found
-              </div>
-            ) : (
-              filtered.map((command, index) => (
-                <div
-                  key={command.label}
-                  id={getOptionId(command.key)}
-                  role="option"
-                  aria-selected={index === idx}
-                  onClick={() => run(command)}
-                  onMouseMove={() => setIdx(index)}
+                <span
                   style={{
-                    width: "100%",
-                    padding: "10px 18px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    background: index === idx ? "rgba(91,156,246,0.1)" : "transparent",
-                    cursor: "pointer",
-                    textAlign: "left",
-                    transition: "background .12s",
+                    fontFamily: "var(--fm)",
+                    fontSize: 12.5,
+                    color: index === idx ? "var(--txt)" : "var(--txt2)",
                   }}
                 >
-                  <span
-                    style={{
-                      fontFamily: "var(--fm)",
-                      fontSize: 12.5,
-                      color: index === idx ? "var(--txt)" : "var(--txt2)",
-                    }}
-                  >
-                    {command.label}
-                  </span>
-                  <kbd
-                    aria-hidden="true"
-                    style={{
-                      fontFamily: "var(--fm)",
-                      fontSize: 9.5,
-                      color: index === idx ? "var(--acc)" : "var(--txt3)",
-                      padding: "2px 6px",
-                      border: `1px solid ${index === idx ? "rgba(91,156,246,0.3)" : "var(--bdr)"}`,
-                      borderRadius: 4,
-                      transition: "all .12s",
-                    }}
-                  >
-                    {command.key}
-                  </kbd>
-                </div>
-              ))
-            )}
+                  {command.label}
+                </span>
+                <kbd
+                  aria-hidden="true"
+                  style={{
+                    fontFamily: "var(--fm)",
+                    fontSize: 9.5,
+                    color: index === idx ? "var(--acc)" : "var(--txt3)",
+                    padding: "2px 6px",
+                    border: `1px solid ${index === idx ? "rgba(91,156,246,0.3)" : "var(--bdr)"}`,
+                    borderRadius: 4,
+                    transition: "all .12s",
+                  }}
+                >
+                  {command.key}
+                </kbd>
+              </div>
+            ))}
           </div>
+          {filtered.length === 0 && (
+            <div
+              role="status"
+              style={{
+                padding: 20,
+                fontFamily: "var(--fm)",
+                fontSize: 12,
+                color: "var(--txt3)",
+                textAlign: "center",
+              }}
+            >
+              No commands found
+            </div>
+          )}
 
           <div
             aria-hidden="true"
