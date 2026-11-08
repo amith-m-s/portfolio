@@ -4,15 +4,19 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { useEffect, useRef, useState } from "react";
 import type { CSSProperties, KeyboardEvent as ReactKeyboardEvent } from "react";
 
+function getScrollBehavior(): ScrollBehavior {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+}
+
 const COMMANDS = [
-  { label: "View Projects", action: () => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" }), key: "P" },
-  { label: "About Me", action: () => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" }), key: "A" },
-  { label: "Skills", action: () => document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" }), key: "S" },
-  { label: "Philosophy", action: () => document.getElementById("philosophy")?.scrollIntoView({ behavior: "smooth" }), key: "H" },
+  { label: "View Projects", action: () => document.getElementById("projects")?.scrollIntoView({ behavior: getScrollBehavior() }), key: "P" },
+  { label: "About Me", action: () => document.getElementById("about")?.scrollIntoView({ behavior: getScrollBehavior() }), key: "A" },
+  { label: "Skills", action: () => document.getElementById("skills")?.scrollIntoView({ behavior: getScrollBehavior() }), key: "S" },
+  { label: "Philosophy", action: () => document.getElementById("philosophy")?.scrollIntoView({ behavior: getScrollBehavior() }), key: "H" },
   { label: "GitHub Profile", action: () => window.open("https://github.com/amith-m-s", "_blank", "noopener,noreferrer"), key: "G" },
   { label: "Deep Resume Analyzer", action: () => window.open("https://deep-resume-analyzer.vercel.app/", "_blank", "noopener,noreferrer"), key: "D" },
   { label: "Send Email", action: () => { window.location.href = "mailto:amith6567@gmail.com"; }, key: "E" },
-  { label: "Scroll to Top", action: () => window.scrollTo({ top: 0, behavior: "smooth" }), key: "T" },
+  { label: "Scroll to Top", action: () => window.scrollTo({ top: 0, behavior: getScrollBehavior() }), key: "T" },
 ];
 
 const LIST_ID = "command-palette-results";
