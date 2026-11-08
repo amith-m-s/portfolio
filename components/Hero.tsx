@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useSyncExternalStore } from "react";
 
 const ROLES = [
   "Backend Engineer",
@@ -15,37 +15,41 @@ const METRICS = [
 ];
 
 const STACK = ["Python","Node.js","FastAPI","Docker","React","NLP","Sui Move","PostgreSQL"];
+const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
+
+function subscribeToMotionPreference(onChange: () => void) {
+  const mediaQuery = window.matchMedia(REDUCED_MOTION_QUERY);
+  mediaQuery.addEventListener("change", onChange);
+  return () => mediaQuery.removeEventListener("change", onChange);
+}
+
+function getMotionPreference() {
+  return window.matchMedia(REDUCED_MOTION_QUERY).matches;
+}
+
+function getServerMotionPreference() {
+  return false;
+}
 
 export default function Hero() {
   const [ready, setReady] = useState(false);
   const [roleIdx, setRoleIdx] = useState(0);
   const [typed, setTyped] = useState("");
   const [phase, setPhase] = useState<"typing"|"pause"|"erasing">("typing");
-  const [reducedMotion, setReducedMotion] = useState(false);
+  const reducedMotion = useSyncExternalStore(
+    subscribeToMotionPreference,
+    getMotionPreference,
+    getServerMotionPreference,
+  );
   const [mouse, setMouse] = useState({ x: 50, y: 50 });
   const heroRef = useRef<HTMLDivElement>(null);
 
   // Entrance
   useEffect(() => { const t = setTimeout(() => setReady(true), 80); return () => clearTimeout(t); }, []);
 
-  // Keep JavaScript-driven motion in sync with the user's system preference.
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const syncPreference = () => setReducedMotion(mediaQuery.matches);
-
-    syncPreference();
-    mediaQuery.addEventListener("change", syncPreference);
-    return () => mediaQuery.removeEventListener("change", syncPreference);
-  }, []);
-
   // Typewriter for rotating roles
   useEffect(() => {
-    if (reducedMotion) {
-      setRoleIdx(1);
-      setTyped(ROLES[1]);
-      setPhase("pause");
-      return;
-    }
+    if (reducedMotion) return;
 
     const role = ROLES[roleIdx];
     if (phase === "typing") {
@@ -75,10 +79,7 @@ export default function Hero() {
 
   // Cursor glow
   useEffect(() => {
-    if (reducedMotion) {
-      setMouse({ x: 50, y: 50 });
-      return;
-    }
+    if (reducedMotion) return;
 
     const onMove = (e: MouseEvent) => {
       if (!heroRef.current) return;
@@ -91,6 +92,7 @@ export default function Hero() {
 
   const tr = (delay = 0, extra = "") =>
     `opacity ${ready ? 0.001 : 0.6}s ease ${delay}s, transform ${ready ? 0.001 : 0.6}s cubic-bezier(0.22,1,0.36,1) ${delay}s${extra ? ", " + extra : ""}`;
+  const glowPosition = reducedMotion ? { x: 50, y: 50 } : mouse;
 
   return (
     <section ref={heroRef} id="hero" style={{
@@ -104,7 +106,7 @@ export default function Hero() {
       {/* Cursor reactive radial */}
       <div style={{
         position:"absolute",inset:0,pointerEvents:"none",
-        background:`radial-gradient(700px circle at ${mouse.x}% ${mouse.y}%, rgba(91,156,246,0.055), transparent 55%)`,
+        background:`radial-gradient(700px circle at ${glowPosition.x}% ${glowPosition.y}%, rgba(91,156,246,0.055), transparent 55%)`,
         transition:"background .12s ease",
       }}/>
 
