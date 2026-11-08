@@ -21,14 +21,32 @@ export default function Hero() {
   const [roleIdx, setRoleIdx] = useState(0);
   const [typed, setTyped] = useState("");
   const [phase, setPhase] = useState<"typing"|"pause"|"erasing">("typing");
+  const [reducedMotion, setReducedMotion] = useState(false);
   const [mouse, setMouse] = useState({ x: 50, y: 50 });
   const heroRef = useRef<HTMLDivElement>(null);
 
   // Entrance
   useEffect(() => { const t = setTimeout(() => setReady(true), 80); return () => clearTimeout(t); }, []);
 
+  // Keep JavaScript-driven motion in sync with the user's system preference.
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const syncPreference = () => setReducedMotion(mediaQuery.matches);
+
+    syncPreference();
+    mediaQuery.addEventListener("change", syncPreference);
+    return () => mediaQuery.removeEventListener("change", syncPreference);
+  }, []);
+
   // Typewriter for rotating roles
   useEffect(() => {
+    if (reducedMotion) {
+      setRoleIdx(1);
+      setTyped(ROLES[1]);
+      setPhase("pause");
+      return;
+    }
+
     const role = ROLES[roleIdx];
     if (phase === "typing") {
       if (typed.length < role.length) {
@@ -53,10 +71,15 @@ export default function Hero() {
         return () => clearTimeout(t);
       }
     }
-  }, [typed, phase, roleIdx]);
+  }, [typed, phase, roleIdx, reducedMotion]);
 
   // Cursor glow
   useEffect(() => {
+    if (reducedMotion) {
+      setMouse({ x: 50, y: 50 });
+      return;
+    }
+
     const onMove = (e: MouseEvent) => {
       if (!heroRef.current) return;
       const r = heroRef.current.getBoundingClientRect();
@@ -64,7 +87,7 @@ export default function Hero() {
     };
     window.addEventListener("mousemove", onMove, { passive: true });
     return () => window.removeEventListener("mousemove", onMove);
-  }, []);
+  }, [reducedMotion]);
 
   const tr = (delay = 0, extra = "") =>
     `opacity ${ready ? 0.001 : 0.6}s ease ${delay}s, transform ${ready ? 0.001 : 0.6}s cubic-bezier(0.22,1,0.36,1) ${delay}s${extra ? ", " + extra : ""}`;
